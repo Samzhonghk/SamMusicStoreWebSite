@@ -1,0 +1,26 @@
+﻿@model SamMusicStoreWebSite.Models.Genre
+
+@{
+    ViewBag.Title = "Browse Albums";
+}
+
+
+<div class="genre">
+    
+    <h3><em>@Model.Name</em> </h3>
+
+    <ul>
+        @foreach (var album in @Model.Album)
+        {
+            <li>
+
+                <a href="@Url.Action("Details", new { id = album.AlbumId })">
+                    <img alt="@album.Title" src="@album.AlbumArtUrl" /> <span>@album.Title</span>
+
+                </a>
+            </li>
+
+        }
+
+    </ul>
+</div>
